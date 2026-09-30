@@ -6,6 +6,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/infinix/X6882
 
 PRODUCT_COPY_FILES += \
+    vendor/infinix/X6882/proprietary/system/etc/init/kpoc_charger.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/kpoc_charger.rc \
     vendor/infinix/X6882/proprietary/system/etc/public.libraries-mtk.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-mtk.txt \
     vendor/infinix/X6882/proprietary/vendor/app/mcRegistry/020f0000000000000000000000000000.drbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020f0000000000000000000000000000.drbin \
     vendor/infinix/X6882/proprietary/vendor/app/mcRegistry/020f0000000000000000000000000000.tlbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020f0000000000000000000000000000.tlbin \
@@ -375,7 +376,6 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6882/proprietary/vendor/etc/init/vendor.transsion.hardware.trancam.trancamserver@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.transsion.hardware.trancam.trancamserver@1.0-service.rc \
     vendor/infinix/X6882/proprietary/vendor/etc/init/vendor.trustonic.tee@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.trustonic.tee@1.1-service.rc \
     vendor/infinix/X6882/proprietary/vendor/etc/init/volte_clientapi_ua.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/volte_clientapi_ua.rc \
-    vendor/infinix/X6882/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
     vendor/infinix/X6882/proprietary/vendor/etc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     vendor/infinix/X6882/proprietary/vendor/etc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
     vendor/infinix/X6882/proprietary/vendor/etc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_RF.conf \
@@ -521,13 +521,13 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6882/proprietary/vendor/raw_hdr/params_bin/s5kjn1_17201906_EXPO_BRACKET_HDR_nr.bin:$(TARGET_COPY_OUT_VENDOR)/raw_hdr/params_bin/s5kjn1_17201906_EXPO_BRACKET_HDR_nr.bin
 
 PRODUCT_PACKAGES += \
+    libshowlogo \
     AVCSecureVdecCA_510 \
     HEVCSecureVdecCA_510 \
     VP9SecureVdecCA_510 \
     vendor.mediatek.hardware.videotelephony@1.0-impl \
     libAVCSecureVencCA_510 \
     libTransNS \
-    libaedv \
     libbwc \
     libccci_util \
     libgz_gp_client \
@@ -538,7 +538,6 @@ PRODUCT_PACKAGES += \
     libion_ulit \
     libipsec_ims_shr \
     libkaraoke \
-    libladder \
     libmtkcutils \
     libmtkproperty \
     libmtkrillog \
@@ -1130,7 +1129,7 @@ PRODUCT_PACKAGES += \
     libfgauge_gm30 \
     libfile_op \
     libforkexecwrap \
-    libformatter \
+    libformatter_mtk \
     libged \
     libgf_ca \
     libgf_factory_test \
@@ -1159,6 +1158,7 @@ PRODUCT_PACKAGES += \
     libmipc \
     libmml \
     libmnetlink_v104 \
+    libmnl_mtk \
     libmsbc_mtk \
     libmtk-fusion-ril-prop-vsim \
     libmtk-ril \
@@ -1599,7 +1599,6 @@ PRODUCT_PACKAGES += \
     libitdfacebeauty \
     liblpcnr \
     libmagicsky_64 \
-    libmnl \
     libmorpho_HDSR \
     libmpbase \
     libmsnr \
@@ -1841,6 +1840,7 @@ PRODUCT_PACKAGES += \
     manifest_hwcomposer.xml \
     vendor.silead.hardware.fingerprintext@1.0-service.xml \
     vendor.transsion.hardware.trancam.trancamserver@1.0.xml \
+    kpoc_charger \
     ccci_mdinit \
     ccci_rpcd \
     epdg_wod \
@@ -1881,7 +1881,6 @@ PRODUCT_PACKAGES += \
     volte_rcs_ua \
     volte_stack \
     volte_ua \
-    wlan_assistant \
     wmt_launcher \
     wmt_loader
 
@@ -2272,7 +2271,6 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libitdfacebeauty_so \
     vendor_lib64_liblpcnr_so \
     vendor_lib64_libmagicsky_64_so \
-    vendor_lib64_libmnl_so \
     vendor_lib64_libmorpho_HDSR_so \
     vendor_lib64_libmpbase_so \
     vendor_lib64_libmsnr_so \
